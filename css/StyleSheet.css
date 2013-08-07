@@ -1,0 +1,47 @@
+﻿/* PAGE COLORS
+6EAC2C - jQuery Green
+2191C0 - jQuery Light Blue
+0078AE - jQuery Blue
+056B93 - jQuery Dark Blue
+F7A50D - jQuery Dark Orange
+
+333333 - Almost Black
+FF7C00 - Orange
+E8E8E8 - Super Light Gray
+B0B0B0 - Light Gray
+FF0000 - Red
+*/
+
+body { color:#333333; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size:.8em; }
+img { border:0px; }
+div { overflow:auto; }
+
+#Wrapper { position:static; width:auto; margin:auto; padding:15px; }
+#BrowserMessage { text-align:right; color:#FFFFFF; background-color:Blue; padding:3px 10px 3px 10px; }
+#RightNavigation { float:right; padding:20px; max-width:350px; overflow:auto; font-size:.9em; }
+#RightNavigation a { color:#1100FF; text-decoration:none; }
+#RightNavigation a:hover { color:#1100FF; text-decoration:underline; }
+#RightNavigation .TwitterFooter { background-color:#2191C0; color:#FFFFFF; padding:0px 5px 0px 5px; font-size:.75em; border-bottom:1px solid #555555; }
+#RightNavigation .TwitterFooter a { color:#FFFFFF; text-decoration:none; }
+#RightNavigation .TwitterFooter a:hover { color:#FFFFFF; text-decoration:underline; }
+#RightNavigation .TweetBlock { -moz-border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+#RightNavigation .TweetBlock:hover { background-color:#E8E8E8; -moz-border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+/*
+#Header { height:300px; background-image:url(../images/HulkCrossfit.png) 50%; }
+*/
+
+.BoldOrange { color:#F7A50D; font-weight:bold; font-size:1em; } 
+.standard { padding:10px; width:auto; border:1px solid #E8E8E8; -moz-border-radius:12px; -ms-border-radius:12px; -webkit-border-radius:12px; border-radius:12px; }
+.Error { padding:4px 10px 4px 10px; display:none; width:auto; margin-bottom:10px; border:1px solid #E8E8E8; -moz-border-radius:12px; -ms-border-radius:12px; -webkit-border-radius:12px; border-radius:12px; }
+.Comment { color:#B0B0B0; font-style:italic; }
+.Required { color:#FF0000; font-size:1em; font-weight:bold; }
+.Header { color:#056B93; font-weight:bold; font-size:1.2em; }
+.TwitterName { font-weight:bold; color:#333333; }
+.TwitterScreenName { color:#AAAAAA; font-size:.75em; }
+.TwitterImage { -moz-border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+
+label.RegistrationForm { display:inline-block; width:110px; text-align:right; }
+div.Separator { border:1px solid #056B93; margin:5px 3px 5px 3px; }
+
+/* jQuery Overrides */
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #e14f1c url(images/ui-bg_gloss-wave_45_e14f1c_500x100.png) 50% top repeat-x; color: #333333; }

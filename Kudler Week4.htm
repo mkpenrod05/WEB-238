@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Kudler Preferred Customer Mailing list</title>
+
+
+<!--CDATA is used to help the browser to avoid displaying your code on the page in plain
+text for the user to see.  It will tell the browser to skip over this content in regards
+to displaying it on the page.  By default, anything written in a "style" tag is not going
+to be displayed as plain text on a webpage but by some browser glitch, a "script" tag could.
+We need to move the CDATA declaration to script tag!-->
+<style type="text/css">
+/*<![CDATA[*/
+
+ thead.c5 {font-family: sans-serif}
+ hr.c4 {color: purple; background-color: black; height: 5}
+ td.c3 {font-family: times-new roman; font-size: large; font-weight: bold}
+ td.c2 {font-size: 1.2em; color: blue; font-weight: bold; font-style: italic}
+ thead.c1 {font-family: times-new roman}
+
+/*]]>*/
+</style>
+</head>
+<body>
+
+<!--Any JavaScript that is written in the <body> tag will be "rendered" in line with the HTML
+Best practice is to put JavaScript at either the bottom of the body or in the head section-->
+
+<script type="text/javascript">
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+
+//This CDATA declaration does not have a closing section.  All the data within a script tag should
+//be wrapped with this...  Need to add the closing to the bottom.
+//<![CDATA[
+function ValidateContactForm()
+{
+    var name = document.ContactForm.Name;
+    var email = document.ContactForm.Email;
+    var phone = document.ContactForm.Telephone;
+    var nocall = document.ContactForm.DoNotCall;
+    var address= document.ContactForm.Address;
+    var city= document.ContactForm.City
+    var State = document.ContactForm.State
+    var zip = document.ContactForm.Zip
+    var comment = document.ContactForm.Comment;
+
+    if (name.value == "")
+    {
+        window.alert("Please enter your name.");
+        name.focus();
+        return false;
+    }
+    
+    if (email.value == "")
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    //using the indexOf() function is just fine but we don't need the second parameter
+    //if the starting point is going to be at 0
+    //also it is possible for a user to enter an "@" or a "." as the first character so
+    //let's make sure it is not the first character by specifying <= 1
+    if (email.value.indexOf("@", "0") < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+    if (email.value.indexOf(".", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    if ((nocall.checked == false) && (phone.value == ""))
+    {
+        window.alert("Please enter your telephone number.");
+        phone.focus();
+        return false;
+    }
+
+    
+
+    if (comment.value == "")
+    {
+        window.alert("Please provide a detailed description or comment.");
+        comment.focus();
+        return false;
+    }
+    return true;
+}
+
+
+
+function EnableDisable(chkbx)
+{
+    if(chkbx.checked == true)
+    {
+        document.ContactForm.Telephone.disabled = true;
+    }
+    else
+    {
+        document.ContactForm.Telephone.disabled = false;
+    }
+}
+</script>
+
+<h1>Kudler Fine Foods Preferred Mailing List</h1>
+<h2>Customer Information</h2>
+
+<form method="post" action="mailto:pamela.riggle@yahoo.com" name="ContactForm" onsubmit="return ValidateContactForm();" id="ContactForm">
+
+<!--What is this extra form tag for?-->
+<form action="">
+
+Name: <input type="text" size="50" name="Name" /><br /><br />
+
+Address: <input type="text" size="35&quot;" name="Address" /><br /><br />
+
+City: <input type="text" size="30" name="City" />
+
+State: <input type="text" size="3" name="State" />
+           
+Zip: <input type="text" size="10&quot;" name="Zip" /><br /><br />
+
+E-mail Address: <input type="text" size="65" name="Email" id=":E-mail" /><br /><br />
+
+Telephone: <input type="text" size="25" id="Telephone" /><br />
+
+<input type="checkbox" name="DoNotCall" onclick="EnableDisable(this);" /> Please do not call me.
+ 
+
+<!--We are getting an error here because a textarea must be defined with "cols" and "rows".
+We are missing the "rows" section-->
+<p>Comments: 
+<textarea cols="55" name="Comment">
+</textarea></p>
+
+<input type="submit" value="Send" name="submit" /> <input type="reset" value="Reset" name="reset" />
+
+</form>
+</body>
+</html>
+
+

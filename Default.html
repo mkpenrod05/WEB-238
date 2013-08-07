@@ -1,0 +1,260 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+<head>
+    
+    <!--Sets the character set for the page to UTF-8 which supports ASCII-->  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <!--This tag tells the browser to display the content in IE9 whenever possible
+    This is important because IE9 supports web standards and the page will render better-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    
+    <!--This page will not be cached and each time it is accessed, a new request will have to be
+    sent to the origin server.  This slows load time a little but the user will always get
+    the newest data from the page.-->
+    <meta http-equiv="Cache-control" content="No-Cache" />
+    
+    <!--*********************************SEARCH ENGINE TAGS START*********************************-->
+    <!--The following tags are used to optimize the page for search engines.-->
+    
+    <meta name="description" content="" />
+    
+    <!--Any keywords used in this tag must appear throughout the website or the site will get a bad rating.-->
+    <meta name="keywords" content="" />
+    
+    <meta name="author" content="Michael C. Penrod" />
+    <!--*********************************SEARCH ENGINE TAGS END*********************************-->
+
+    <title>Hulk Crossfit</title>
+
+    <link rel="icon" href="images/HulkFavicon1-20130108-favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/HulkFavicon1-20130108-favicon.ico" type="image/x-icon" />
+
+    <link rel="Stylesheet" type="text/css" href="css/jquery-ui-1.9.2.custom.css" />
+    <link rel="Stylesheet" type="text/css" href="css/StyleSheet.css" />
+    
+    <style type="text/css">
+        /*
+        div { border:1px solid red; }
+        */
+    </style>
+    
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script type="text/javascript" src="js/Registration.js"></script>
+    <script type="text/javascript" src="js/Browser.js"></script>
+    <script type="text/javascript" src="js/API.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+        //document.write(navigator.userAgent);
+        //document.write($.browser.name + " - " + $.browser.version);
+
+//        document.write("<b>navigator.appCodeName:</b> " + navigator.appCodeName + "<br />");
+//        document.write("<b>navigator.appName:</b> " + navigator.appName + "<br />");
+//        document.write("<b>navigator.appVersion:</b> " + navigator.appVersion + "<br />");
+//        document.write("<b>navigator.cookieEnabled:</b> " + navigator.cookieEnabled + "<br />");
+//        document.write("<b>navigator.onLine:</b> " + navigator.onLine + "<br />");
+//        document.write("<b>navigator.platform:</b> " + navigator.platform + "<br />");
+//        document.write("<b>navigator.userAgent:</b> " + navigator.userAgent + "<br />");
+//        document.write("<b>navigator.javaEnabled():</b> " + navigator.javaEnabled() + "<br />");
+
+//        document.write("<b>window.history.back():</b> " + window.history.back() + "<br />");
+//        document.write("<b>window.history.length:</b> " + window.history.length + "<br />");
+
+        $(document).ready(function () {
+
+            var BrowserName = $.browser.name;
+            var BrowserVersionLong = $.browser.version;
+            var BrowserVersionShort = $.browser.versionNumber;
+            $("#BrowserMessage").html("You are viewing this page with <span class='BoldOrange'>" + BrowserName.toUpperCase() + "</span> version <span class='BoldOrange'>" + BrowserVersionLong + "</span>!");
+
+            $("#RegistrationSubmit").button().click(function () {
+                //alert("It's Smashing Time!!!");
+                RegistrationFormValidation();
+            });
+
+            $("#Phone1").blur(function () {
+                var AreaCodeValue = $(this).val();
+                if (AreaCodeValue != "") {
+                    $("#RegionDisplay").text(GetAreaCode(AreaCodeValue));
+                } else {
+                    $("#RegionDisplay").text("");
+                }
+            });
+
+            $("#Phone1").keyup(function () {
+                if ($(this).val().length == 3) {
+                    $("#Phone2").focus();
+                } else if ($(this).val().length == 0) {
+                    $("#RegionDisplay").text("");
+                }
+            });
+
+            $("#Phone2").keyup(function () {
+                if ($(this).val().length == 3) {
+                    $("#Phone3").focus();
+                }
+            });
+
+            $("#Phone3").keyup(function () {
+                if ($(this).val().length == 4) {
+                    $("#Email").focus();
+                }
+            });
+
+            GetTwitterFeedByUser("mkpenrod05", "10");
+
+        });                                       //end document.ready()
+
+    //]]>
+    </script>
+
+    <script type="text/javascript">
+        
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+    <div id="Wrapper">    
+        <div style="font-size:26px; color:Red; text-align:center;">Page Under Construction</div>
+        <br />
+        <div id="BrowserMessage"></div>
+        <div id="Page">
+            
+            <div id="Header">
+                Header Section...
+                <!--Green color is 12C400-->
+                <!--<img src="images/HulkCrossfit.png" height="300" />-->
+            </div>
+            
+            <div id="Navigation">Navigation Section...</div>
+            
+            <!--RIGHT NAVIGATION START-->
+            <div id="RightNavigation" style="">
+                <div id="Feed" class="standard">
+                    Twitter...
+                </div>
+            </div>
+            <!--RIGHT NAVIGATION END-->
+
+            <div id="Content" class="" style="padding:20px;">
+                
+                <div id="DivTopMessage" class="Error" style="color:#FFFFFF;"></div>
+                
+                <div id="Banner" class="standard" style="padding:10px; margin-bottom:10px;">Banner Section...</div>
+                <div id="Registration" class="standard">
+                    
+                    <p>
+                    <!--<label class="RegistrationForm"></label>-->
+                    <div id="" style="padding-left:10px;">
+                        <div style="padding-left:10px;">
+                            <span class="Header">Registration</span>
+                        </div>
+                        <div class="Separator"></div>
+                    </div>
+                    </p>
+                    
+                    <p>
+                    <label for="FirstName" class="RegistrationForm">&nbsp;<span class="Required">*</span>Name: </label>
+                    <input id="FirstName" type="text" maxlength="25" />
+                    <span id="FirstNameMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="LastName" class="RegistrationForm">&nbsp;<span class="Required">*</span>Last Name: </label>
+                    <input id="LastName" type="text" maxlength="25" />
+                    <span id="LastNameMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="PhoneNumber" class="RegistrationForm">Phone Number: </label>
+                    <input id="Phone1" type="text" maxlength="3" size="2" /> -
+                    <input id="Phone2" type="text" maxlength="3" size="2" /> -
+                    <input id="Phone3" type="text" maxlength="4" size="3" />
+                    <span id="RegionDisplay" class="Comment"></span>
+                    <br />
+                    <span id="PhoneNumberMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="Email" class="RegistrationForm">&nbsp;<span class="Required">*</span>Email: </label>
+                    <input id="Email" type="text" maxlength="50" size="25" />
+                    <span id="EmailMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="Age" class="RegistrationForm">&nbsp;<span class="Required">*</span>Age: </label>
+                    <input id="Age" type="text" maxlength="2" size="2" />
+                    <span id="AgeMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="Gender" class="RegistrationForm">&nbsp;<span class="Required">*</span>Gender: </label>
+                    <select id="Gender" name="Gender">
+                        <option value=""></option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
+                    <span id="GenderMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="Height" class="RegistrationForm">&nbsp;<span class="Required">*</span>Height: </label>
+                    <script type="text/javascript">
+                        document.write("<select id='Height' name='Height'>");
+                        document.write("<option value=''></option>");
+                        for (i = 48; i <= 96; i++) {
+                            document.write("<option value='" + i + "'>" + i + "</option>");
+                        }
+                        document.write("</select> inches");
+                    </script>
+                    <span id="HeightMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="Weight" class="RegistrationForm">&nbsp;<span class="Required">*</span>Weight: </label>
+                    <script type="text/javascript">
+                        document.write("<select id='Weight' name='Weight'>");
+                        document.write("<option value=''></option>");
+                        for (i = 80; i <= 345; i=i+5) {
+                            document.write("<option value='" + i + "'>" + i + "</option>");
+                        }
+                        document.write("<option value='" + 350 + "'>" + 350 + "+</option>");
+                        document.write("</select> pounds");
+                    </script>
+                    <span id="WeightMessage"></span>
+                    </p>
+
+                    <p>
+                    <label for="BloodPressure" class="RegistrationForm">Blood Pressure: </label>
+                    <input id="BloodPressure1" type="text" maxlength="3" size="3" /> over
+                    <input id="BloodPressure2" type="text" maxlength="3" size="3" />
+                    <span id="BloodPressureMessage"></span>
+                    </p>
+
+                    <div class="Separator"></div>
+
+                    <p>
+                    <label for="RegistrationSubmit" class="RegistrationForm"></label>
+                    <input id="RegistrationSubmit" type="button" value="Submit" />
+                    </p>
+
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>
